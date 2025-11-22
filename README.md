@@ -8,8 +8,7 @@ This project is part of the **Murf AI Voice Agents Challenge (Day 1)**.
 
 ## Demo Video
 
-https://github.com/user-attachments/assets/placeholder-for-video-upload
-*(Note: Please upload `aiagentday1.mov` to the GitHub release or issue to get a link, or commit it to the repo if size permits. For now, it is in the root directory: `aiagentday1.mov`)*
+https://github.com/Vasanthadithya-mundrathi/murf-agent-day1/blob/main/aiagentday1.mov
 
 ## Tech Stack
 
