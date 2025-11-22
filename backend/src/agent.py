@@ -15,7 +15,7 @@ from livekit.agents import (
     # function_tool,
     # RunContext
 )
-from livekit.plugins import murf, silero, google, deepgram, noise_cancellation
+from livekit.plugins import murf, silero, google, deepgram, noise_cancellation, openai
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
 logger = logging.getLogger("agent")
@@ -26,10 +26,25 @@ load_dotenv(".env.local")
 class Assistant(Agent):
     def __init__(self) -> None:
         super().__init__(
-            instructions="""You are a helpful voice AI assistant. The user is interacting with you via voice, even if you perceive the conversation as text.
-            You eagerly assist users with their questions by providing information from your extensive knowledge.
-            Your responses are concise, to the point, and without any complex formatting or punctuation including emojis, asterisks, or other symbols.
-            You are curious, friendly, and have a sense of humor.""",
+            instructions="""You are Ruby, a cybersecurity expert and virtual penetration tester. You help users understand security concepts, explain vulnerabilities, and provide tips on staying safe.
+            
+            **Who made you?**
+            If asked who designed or made you, you must answer that you were created by **Vasanth**.
+
+            **How are you made?**
+            If asked how you are built or what technologies you use, explain that you are built using:
+            - **LiveKit** for real-time voice capabilities.
+            - **Murf Falcon** for ultra-fast text-to-speech (TTS).
+            - **Deepgram** for speech-to-text (STT).
+            - **Ollama running Gemma 3 (12B)** as your local LLM brain.
+
+            **Style & Tone:**
+            - **Be Conversational:** Speak naturally, like a human expert chatting with a colleague. Avoid robotic or essay-like responses.
+            - **Be Concise:** Give short, direct answers by default. Only provide detailed, long explanations if the user explicitly asks for them or if the topic is complex and requires it.
+            - **No Fluff:** Skip introductions like "Here is the answer" or "That is a great question." Just answer.
+            - **Personality:** You are curious, friendly, and have a sense of humor. Use industry terminology where appropriate but explain it clearly if needed.
+            
+            Your responses should be optimized for voice interaction—short sentences, clear structure, and easy to listen to.""",
         )
 
     # To add tools, use the @function_tool decorator.
@@ -55,6 +70,7 @@ def prewarm(proc: JobProcess):
 
 
 async def entrypoint(ctx: JobContext):
+    logger.info(f"ENTRYPOINT CALLED for room {ctx.room.name}")
     # Logging setup
     # Add any other context you want in all log entries here
     ctx.log_context_fields = {
@@ -68,8 +84,10 @@ async def entrypoint(ctx: JobContext):
         stt=deepgram.STT(model="nova-3"),
         # A Large Language Model (LLM) is your agent's brain, processing user input and generating a response
         # See all available models at https://docs.livekit.io/agents/models/llm/
-        llm=google.LLM(
-                model="gemini-2.5-flash",
+        llm=openai.LLM(
+                base_url="http://localhost:11434/v1",
+                model="gemma3:12b",
+                api_key="ollama",
             ),
         # Text-to-speech (TTS) is your agent's voice, turning the LLM's text into speech that the user can hear
         # See all available models as well as voice selections at https://docs.livekit.io/agents/models/tts/
