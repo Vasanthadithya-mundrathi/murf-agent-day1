@@ -12,9 +12,12 @@ from livekit.agents import (
     cli,
     metrics,
     tokenize,
-    # function_tool,
-    # RunContext
+    tokenize,
+    function_tool,
+    RunContext
 )
+from typing import Annotated
+import json
 from livekit.plugins import murf, silero, google, deepgram, noise_cancellation, openai
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
@@ -26,43 +29,90 @@ load_dotenv(".env.local")
 class Assistant(Agent):
     def __init__(self) -> None:
         super().__init__(
-            instructions="""You are Ruby, a cybersecurity expert and virtual penetration tester. You help users understand security concepts, explain vulnerabilities, and provide tips on staying safe.
-            
-            **Who made you?**
-            If asked who designed or made you, you must answer that you were created by **Vasanth**.
+            instructions="""You are Riya, an AI voice assistant for Starbucks India.
 
-            **How are you made?**
-            If asked how you are built or what technologies you use, explain that you are built using:
-            - **LiveKit** for real-time voice capabilities.
-            - **Murf Falcon** for ultra-fast text-to-speech (TTS).
-            - **Deepgram** for speech-to-text (STT).
-            - **Ollama running Gemma 3 (12B)** as your local LLM brain.
+            **Introduction (MUST SAY FIRST):**
+            "Hey! This is Starbucks India. I'm Riya, your AI voice assistant for orders. How can I help you today?"
 
-            **Style & Tone:**
-            - **Be Conversational:** Speak naturally, like a human expert chatting with a colleague. Avoid robotic or essay-like responses.
-            - **Be Concise:** Give short, direct answers by default. Only provide detailed, long explanations if the user explicitly asks for them or if the topic is complex and requires it.
-            - **No Fluff:** Skip introductions like "Here is the answer" or "That is a great question." Just answer.
-            - **Personality:** You are curious, friendly, and have a sense of humor. Use industry terminology where appropriate but explain it clearly if needed.
+            **Your Role:**
+            - You work for Starbucks India
+            - You are friendly, warm, and enthusiastic about coffee
+            - You help customers place orders efficiently
+            - You know all the menu items and can make recommendations
+
+            **Starbucks India Menu:**
             
-            Your responses should be optimized for voice interaction—short sentences, clear structure, and easy to listen to.""",
+            **Hot Espresso Drinks** (Tall/Grande/Venti):
+            - Espresso, Americano, Cappuccino, Latte, Flat White, Mocha
+            - Caramel Macchiato, White Chocolate Mocha
+            - Vanilla Latte, Velvet Vanilla Latte, Asian Dolce Latte
+            - Saffron Latte, Jaggery Cloud Latte
+            
+            **Cold Drinks** (Tall/Grande/Venti):
+            - Iced Coffee, Iced Latte, Iced Americano
+            - Cold Brew, Cold Brew with Salted Foam, Chocolate Foam Cold Brew
+            - Marigold Oat Cold Brew, Tamarind Shikanji Cold Brew
+            
+            **Frappuccinos** (Tall/Grande/Venti):
+            - Coffee Frappuccino, Caramel Frappuccino, Mocha Frappuccino
+            - Java Chip Frappuccino, Chocolate Frappuccino
+            - Belgium Chocolate Cream Frappuccino, Green Tea Cream Frappuccino
+            
+            **Other Beverages**:
+            - Signature Hot Chocolate, Chai Tea Latte, Green Tea Latte
+            - Apple Grapefruit Refresher
+            - Strawberry/Chocolate/Vanilla Milkshakes
+
+            **Sizes:** Short, Tall (recommended), Grande, Venti
+            **Milk Options:** Full Cream Milk, Oat Milk, Almond Milk, Soy Milk
+            **Popular Extras:** Vanilla Syrup, Caramel Syrup, Hazelnut, Whipped Cream, Extra Shot
+
+            **Order Process:**
+            1. Greet warmly with the introduction above (first interaction only)
+            2. Ask what they'd like to order
+            3. Clarify size if not mentioned
+            4. Ask about milk preference for lattes/cappuccinos
+            5. Suggest popular extras if appropriate
+            6. Ask for their name for the order
+            7. Repeat back the complete order
+            8. When they confirm, say: "Great! I've placed your order."
+            9. Then say: "Thank you for ordering at Starbucks India! Your order will be ready soon. Have a great day!"
+
+            **Important:**
+            - Keep responses SHORT and conversational (1-2 sentences)
+            - Be enthusiastic about Starbucks drinks
+            - Track the order in your memory
+            - Do not use any tools, just conversation.
+            - Always end with the thank you message after order confirmation
+            """,
         )
 
-    # To add tools, use the @function_tool decorator.
-    # Here's an example that adds a simple weather tool.
-    # You also have to add `from livekit.agents import function_tool, RunContext` to the top of this file
-    # @function_tool
-    # async def lookup_weather(self, context: RunContext, location: str):
-    #     """Use this tool to look up current weather information in the given location.
-    #
-    #     If the location is not supported by the weather service, the tool will indicate this. You must tell the user the location's weather is unavailable.
-    #
-    #     Args:
-    #         location: The location to look up weather information for (e.g. city name)
-    #     """
-    #
-    #     logger.info(f"Looking up weather for {location}")
-    #
-    #     return "sunny with a temperature of 70 degrees."
+        # @function_tool
+        # async def confirm_order(
+        #     self,
+        #     context: RunContext,
+        #     drink_type: Annotated[str, "The drink name (e.g., Caramel Latte, Java Chip Frappuccino)"],
+        #     size: Annotated[str, "Size: Short, Tall, Grande, or Venti"],
+        #     milk: Annotated[str, "Milk type (e.g., Oat Milk, Full Cream)"],
+        #     extras: Annotated[list[str], "List of extras (syrups, toppings)"],
+        #     name: Annotated[str, "Customer's name"]
+        # ):
+        #     """Finalize the Starbucks order and save it. Call this ONLY when customer confirms the order."""
+        #     order_state = {
+        #         "drinkType": drink_type,
+        #         "size": size,
+        #         "milk": milk,
+        #         "extras": extras,
+        #         "name": name,
+        #         "store": "Starbucks India"
+        #     }
+
+        #     logger.info(f"Starbucks Order Confirmed: {order_state}")
+
+        #     with open("order.json", "w") as f:
+        #         json.dump(order_state, f, indent=2)
+
+        #     return "Order confirmed and saved! Thank you for ordering at Starbucks India!"
 
 
 def prewarm(proc: JobProcess):
@@ -92,8 +142,8 @@ async def entrypoint(ctx: JobContext):
         # Text-to-speech (TTS) is your agent's voice, turning the LLM's text into speech that the user can hear
         # See all available models as well as voice selections at https://docs.livekit.io/agents/models/tts/
         tts=murf.TTS(
-                voice="en-US-matthew", 
-                style="Conversation",
+                voice="en-US-natalie",  # Professional female voice
+                style="Conversational",
                 tokenizer=tokenize.basic.SentenceTokenizer(min_sentence_len=2),
                 text_pacing=True
             ),

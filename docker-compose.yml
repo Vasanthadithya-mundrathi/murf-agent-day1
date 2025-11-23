@@ -1,0 +1,16 @@
+services:
+  livekit:
+    image: livekit/livekit-server:latest
+    command: --config /livekit.yaml --dev
+    ports:
+      - "7880:7880" # WebSocket/HTTP
+      - "7881:7881" # WebRTC TCP
+    volumes:
+      - ./livekit-config.yaml:/livekit.yaml
+    restart: unless-stopped
+    networks:
+      - agent-network
+
+networks:
+  agent-network:
+    driver: bridge
