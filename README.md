@@ -92,9 +92,6 @@ Today, I transformed the agent into **Riya**, a friendly, enthusiastic, and slig
 
 4.  Open `http://localhost:3000` in your browser and start chatting with Riya!
 
-## 📸 Demo
-
-*(Add your demo video or screenshot here)*
 
 ---
 *Built with ❤️ by Vasanth for the Murf AI Challenge.*
