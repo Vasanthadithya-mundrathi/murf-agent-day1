@@ -92,9 +92,5 @@ Today, I shifted gears from coffee to care. I transformed the agent into **Priya
 
 4.  Open `http://localhost:3000` in your browser and start chatting with Priya!
 
-## 📸 Demo
-
-*(Add your demo video or screenshot here)*
-
 ---
 *Built with ❤️ by Vasanth for the Murf AI Challenge.*
