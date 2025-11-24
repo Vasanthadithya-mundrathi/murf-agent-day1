@@ -1,28 +1,28 @@
-# Murf AI Voice Agent - Day 2: Starbucks India Barista "Riya" ☕️
+# Murf AI Voice Agent - Day 3: Apollo Health Assistant "Priya" 🏥
 
-**Welcome to Day 2 of the Murf AI Voice Agents Challenge!**
+**Welcome to Day 3 of the Murf AI Voice Agents Challenge!**
 
-Today, I transformed the agent into **Riya**, a friendly, enthusiastic, and slightly unofficial AI Barista for Starbucks India.
+Today, I shifted gears from coffee to care. I transformed the agent into **Priya**, a warm, empathetic, and helpful AI Health Assistant for Apollo Pharmacy/Healthcare.
 
-> **Disclaimer:** This is an experimental project and is not officially affiliated with Starbucks. It's built for educational and entertainment purposes.
+> **Disclaimer:** This is an experimental project and is not officially affiliated with Apollo Hospitals. **Priya is an AI, not a doctor.** Always consult a professional for medical advice.
 
 ## 🤖 Agent Profile
 
--   **Name:** Riya
--   **Role:** AI Barista for Starbucks India
--   **Personality:** Warm, energetic, and passionate about coffee.
+-   **Name:** Priya
+-   **Role:** AI Health Assistant for Apollo Pharmacy
+-   **Personality:** Caring, empathetic, professional, and reassuring. Like a friendly nurse or health companion.
 -   **Voice:** Murf AI (Natalie - Conversational Style)
 
 ## ✨ Features
 
--   **Smart Ordering:** Takes complex coffee orders including size, milk choice, and extras.
--   **Menu Knowledge:** Knows the full Starbucks India menu (Espresso, Frappuccinos, Cold Brews, etc.).
--   **Conversational Flow:** Handles corrections and maintains a natural dialogue.
--   **Immersive UI:** Custom Starbucks-themed background for the frontend.
+-   **First-Aid Advice:** Provides immediate, non-medical guidance for common issues like fever, cold, cough, headache, and minor cuts.
+-   **Location Awareness:** Specifically tuned for **Hyderabad (Kokapet)** area, guiding users to the nearest Apollo Pharmacy (1.2 km away).
+-   **Safety First:** Strictly programmed to NEVER diagnose or prescribe. Always recommends visiting a doctor for serious or persistent symptoms.
+-   **Immersive UI:** Complete frontend transformation with a soothing **Apollo Blue** animated gradient theme and medical aesthetics.
 
 ## 🛠️ Tech Stack
 
--   **Frontend:** Next.js / React (LiveKit Agent Playground)
+-   **Frontend:** Next.js / React (LiveKit Agent Playground) - *Custom Apollo Theme*
 -   **Backend:** Python (LiveKit Agents)
 -   **Voice (TTS):** **Murf AI** (High-fidelity, human-like speech)
 -   **LLM:** **Ollama** (Gemma 3 12B) - *Running Locally for privacy and speed*
@@ -90,7 +90,7 @@ Today, I transformed the agent into **Riya**, a friendly, enthusiastic, and slig
     pnpm dev
     ```
 
-4.  Open `http://localhost:3000` in your browser and start chatting with Riya!
+4.  Open `http://localhost:3000` in your browser and start chatting with Priya!
 
 ## 📸 Demo
 

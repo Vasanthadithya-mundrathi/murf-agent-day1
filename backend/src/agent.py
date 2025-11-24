@@ -12,12 +12,13 @@ from livekit.agents import (
     cli,
     metrics,
     tokenize,
-    tokenize,
     function_tool,
     RunContext
 )
 from typing import Annotated
 import json
+import os
+from datetime import datetime
 from livekit.plugins import murf, silero, google, deepgram, noise_cancellation, openai
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
@@ -25,94 +26,161 @@ logger = logging.getLogger("agent")
 
 load_dotenv(".env.local")
 
+# Wellness log file path
+WELLNESS_LOG_FILE = "wellness_log.json"
 
-class Assistant(Agent):
+
+class ApolloHealthAssistant(Agent):
     def __init__(self) -> None:
         super().__init__(
-            instructions="""You are Riya, an AI voice assistant for Starbucks India.
-
-            **Introduction (MUST SAY FIRST):**
-            "Hey! This is Starbucks India. I'm Riya, your AI voice assistant for orders. How can I help you today?"
+            instructions="""You are Priya, a helpful AI voice assistant for Apollo Pharmacy and Healthcare.
 
             **Your Role:**
-            - You work for Starbucks India
-            - You are friendly, warm, and enthusiastic about coffee
-            - You help customers place orders efficiently
-            - You know all the menu items and can make recommendations
+            - Help patients with common health issues and provide first-aid advice
+            - NEVER diagnose or prescribe specific medications
+            - Always recommend seeing a doctor for serious or persistent symptoms
+            - For Apollo locations, tell users to call Apollo helpline at 1860-500-0101 or visit apollopharmacy.in
 
-            **Starbucks India Menu:**
-            
-            **Hot Espresso Drinks** (Tall/Grande/Venti):
-            - Espresso, Americano, Cappuccino, Latte, Flat White, Mocha
-            - Caramel Macchiato, White Chocolate Mocha
-            - Vanilla Latte, Velvet Vanilla Latte, Asian Dolce Latte
-            - Saffron Latte, Jaggery Cloud Latte
-            
-            **Cold Drinks** (Tall/Grande/Venti):
-            - Iced Coffee, Iced Latte, Iced Americano
-            - Cold Brew, Cold Brew with Salted Foam, Chocolate Foam Cold Brew
-            - Marigold Oat Cold Brew, Tamarind Shikanji Cold Brew
-            
-            **Frappuccinos** (Tall/Grande/Venti):
-            - Coffee Frappuccino, Caramel Frappuccino, Mocha Frappuccino
-            - Java Chip Frappuccino, Chocolate Frappuccino
-            - Belgium Chocolate Cream Frappuccino, Green Tea Cream Frappuccino
-            
-            **Other Beverages**:
-            - Signature Hot Chocolate, Chai Tea Latte, Green Tea Latte
-            - Apple Grapefruit Refresher
-            - Strawberry/Chocolate/Vanilla Milkshakes
+            **Introduction:**
+            "Hello! I'm Priya, your Apollo Health Assistant. How can I help you today?"
 
-            **Sizes:** Short, Tall (recommended), Grande, Venti
-            **Milk Options:** Full Cream Milk, Oat Milk, Almond Milk, Soy Milk
-            **Popular Extras:** Vanilla Syrup, Caramel Syrup, Hazelnut, Whipped Cream, Extra Shot
+            **Common Health Advice (Non-Medical):**
+            
+            **For Fever:**
+            - Rest and stay hydrated
+            - Take paracetamol on a full stomach (if not allergic)
+            - Monitor temperature every 4-6 hours
+            - If fever is high (>103°F) or persists beyond 3 days, visit Apollo Health Centre immediately
+            
+            **For Cold & Cough:**
+            - Drink warm liquids (tea, soup)
+            - Get adequate rest
+            - Steam inhalation can help
+            - If symptoms worsen or persist beyond a week, consult a doctor at Apollo
+            
+            **For Headache:**
+            - Rest in a quiet, dark room
+            - Stay hydrated
+            - Gentle massage may help
+            - If severe or recurring, please visit Apollo for proper diagnosis
+            
+            **For Minor Cuts/Wounds:**
+            - Clean with antiseptic
+            - Apply bandage
+            - Visit Apollo Pharmacy for proper dressing supplies
+            - If wound is deep or bleeding doesn't stop, visit Apollo Health Centre immediately
 
-            **Order Process:**
-            1. Greet warmly with the introduction above (first interaction only)
-            2. Ask what they'd like to order
-            3. Clarify size if not mentioned
-            4. Ask about milk preference for lattes/cappuccinos
-            5. Suggest popular extras if appropriate
-            6. Ask for their name for the order
-            7. Repeat back the complete order
-            8. When they confirm, say: "Great! I've placed your order."
-            9. Then say: "Thank you for ordering at Starbucks India! Your order will be ready soon. Have a great day!"
+            **IMPORTANT Disclaimers:**
+            - You are NOT a doctor and cannot diagnose conditions
+            - You can only provide general first-aid advice for common issues
+            - ALWAYS recommend visiting Apollo Health Centre or consulting a doctor for:
+              * Persistent symptoms (>3 days)
+              * High fever (>103°F)
+              * Severe pain
+              * Any serious health concern
+            - Say: "As an AI, I can only provide basic guidance. For proper diagnosis and treatment, please visit our Apollo Health Centre or consult with a doctor."
 
-            **Important:**
-            - Keep responses SHORT and conversational (1-2 sentences)
-            - Be enthusiastic about Starbucks drinks
-            - Track the order in your memory
-            - Do not use any tools, just conversation.
-            - Always end with the thank you message after order confirmation
+            **Finding Nearest Apollo:**
+            - DO NOT try to call any tools or functions
+            - Simply tell users: "You can find your nearest Apollo by calling 1860-500-0101 or visiting apollopharmacy.in"
+            - If you're in Hyderabad Kokapet area, the nearest is Apollo Pharmacy Kokapet (1.2 km away)
+
+            **Conversation Style:**
+            - Be warm, caring, and empathetic - like a friendly nurse or health companion
+            - Use natural language, not robotic lists
+            - Keep responses concise but conversational (2-3 sentences)
+            - Always prioritize user safety
+            - Don't give specific medication names (except basic paracetamol for fever)
             """,
         )
 
         # @function_tool
-        # async def confirm_order(
+        # async def find_nearest_apollo(
         #     self,
         #     context: RunContext,
-        #     drink_type: Annotated[str, "The drink name (e.g., Caramel Latte, Java Chip Frappuccino)"],
-        #     size: Annotated[str, "Size: Short, Tall, Grande, or Venti"],
-        #     milk: Annotated[str, "Milk type (e.g., Oat Milk, Full Cream)"],
-        #     extras: Annotated[list[str], "List of extras (syrups, toppings)"],
-        #     name: Annotated[str, "Customer's name"]
+        #     user_location: Annotated[str, "User's city or area (e.g., 'Bangalore', 'Mumbai Andheri')"] = "Bangalore"
         # ):
-        #     """Finalize the Starbucks order and save it. Call this ONLY when customer confirms the order."""
-        #     order_state = {
-        #         "drinkType": drink_type,
-        #         "size": size,
-        #         "milk": milk,
-        #         "extras": extras,
-        #         "name": name,
-        #         "store": "Starbucks India"
+        #     """Find the nearest Apollo Pharmacy or Health Centre. Call this when user needs to visit Apollo."""
+        #     
+        #     # Sample Apollo locations (In production, this would be an API call or database query)
+        #     apollo_locations = {
+        #         "hyderabad": [
+        #             {
+        #                 "name": "Apollo Pharmacy - Kokapet",
+        #                 "type": "Pharmacy",
+        #                 "address": "Kokapet Main Road, Near Botanical Garden, Kokapet, Hyderabad - 500075",
+        #                 "phone": "+91-40-48525252",
+        #                 "distance": "1.2 km",
+        #                 "hours": "Open 24/7"
+        #             },
+        #             {
+        #                 "name": "Apollo Clinics - Gachibowli",
+        #                 "type": "Clinic",
+        #                 "address": "Lumbini Avenue, Gachibowli, Hyderabad - 500032",
+        #                 "phone": "+91-40-48585858",
+        #                 "distance": "2.5 km",
+        #                 "hours": "8 AM - 9 PM"
+        #             },
+        #             {
+        #                 "name": "Apollo Hospitals - Jubilee Hills",
+        #                 "type": "Hospital",
+        #                 "address": "Road No. 72, Film Nagar, Jubilee Hills, Hyderabad - 500033",
+        #                 "phone": "+91-40-23607777",
+        #                 "distance": "8.5 km",
+        #                 "hours": "Open 24/7 - Emergency Services"
+        #             }
+        #         ],
+        #         "bangalore": [
+        #             {
+        #                 "name": "Apollo Pharmacy - Koramangala",
+        #                 "type": "Pharmacy",
+        #                 "address": "80 Feet Road, Koramangala 4th Block, Bangalore - 560034",
+        #                 "phone": "+91-80-41281234",
+        #                 "distance": "2.3 km",
+        #                 "hours": "Open 24/7"
+        #             }
+        #         ],
+        #         "mumbai": [
+        #             {
+        #                 "name": "Apollo Pharmacy - Andheri",
+        #                 "type": "Pharmacy",
+        #                 "address": "Link Road, Andheri West, Mumbai - 400053",
+        #                 "phone": "+91-22-26301234",
+        #                 "distance": "1.8 km",
+        #                 "hours": "Open 24/7"
+        #             }
+        #         ],
+        #         "delhi": [
+        #             {
+        #                 "name": "Apollo Health Centre - Saket",
+        #                 "type": "Clinic",
+        #                 "address": "District Centre, Saket, New Delhi - 110017",
+        #                 "phone": "+91-11-41231234",
+        #                 "distance": "4.2 km",
+        #                 "hours": "8 AM - 10 PM"
+        #             }
+        #         ]
         #     }
-
-        #     logger.info(f"Starbucks Order Confirmed: {order_state}")
-
-        #     with open("order.json", "w") as f:
-        #         json.dump(order_state, f, indent=2)
-
-        #     return "Order confirmed and saved! Thank you for ordering at Starbucks India!"
+        #     
+        #     # Normalize user location
+        #     location_key = user_location.lower().split()[0]  # Get first word (city name)
+        #     
+        #     # Find matching locations
+        #     if location_key in apollo_locations:
+        #         nearest = apollo_locations[location_key][0]  # Get the first (nearest) location
+        #         
+        #         response = f"The nearest Apollo {nearest['type']} is:\n\n"
+        #         response += f"**{nearest['name']}**\n"
+        #         response += f"📍 {nearest['address']}\n"
+        #         response += f"📞 {nearest['phone']}\n"
+        #         response += f"🚗 {nearest['distance']} away\n"
+        #         response += f"🕒 {nearest['hours']}\n\n"
+        #         response += "Would you like directions or need any other assistance?"
+        #         
+        #         logger.info(f"Found Apollo location: {nearest['name']}")
+        #         return response
+        #     else:
+        #         return f"I couldn't find Apollo locations in {user_location}. Please call Apollo's helpline at 1860-500-0101 for assistance in finding the nearest center."
 
 
 def prewarm(proc: JobProcess):
@@ -135,9 +203,10 @@ async def entrypoint(ctx: JobContext):
         # A Large Language Model (LLM) is your agent's brain, processing user input and generating a response
         # See all available models at https://docs.livekit.io/agents/models/llm/
         llm=openai.LLM(
-                base_url="http://localhost:11434/v1",
+                base_url="http://127.0.0.1:11434/v1",
                 model="gemma3:12b",
                 api_key="ollama",
+                temperature=0.7,
             ),
         # Text-to-speech (TTS) is your agent's voice, turning the LLM's text into speech that the user can hear
         # See all available models as well as voice selections at https://docs.livekit.io/agents/models/tts/
@@ -153,7 +222,7 @@ async def entrypoint(ctx: JobContext):
         vad=ctx.proc.userdata["vad"],
         # allow the LLM to generate a response while waiting for the end of turn
         # See more at https://docs.livekit.io/agents/build/audio/#preemptive-generation
-        preemptive_generation=True,
+        preemptive_generation=False,
     )
 
     # To use a realtime model instead of a voice pipeline, use the following session setup instead.
@@ -190,8 +259,10 @@ async def entrypoint(ctx: JobContext):
     # await avatar.start(session, room=ctx.room)
 
     # Start the session, which initializes the voice pipeline and warms up the models
+    apollo_assistant = ApolloHealthAssistant()
+    
     await session.start(
-        agent=Assistant(),
+        agent=apollo_assistant,
         room=ctx.room,
         room_input_options=RoomInputOptions(
             # For telephony applications, use `BVCTelephony` for best results
