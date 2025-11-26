@@ -1,38 +1,36 @@
-# Murf AI Voice Agent - Day 4: Active Recall Coach 📚
+# Murf AI Voice Agent - Day 5: SDR Agent for Razorpay 💼
 
-**Welcome to Day 4 of the Murf AI Voice Agents Challenge!**
+**Welcome to Day 5 of the Murf AI Voice Agents Challenge!**
 
-Today, I built **Teach-the-Tutor** - an Active Recall Coach that helps you learn programming concepts through three different learning modes with agent handoffs.
+Today, I built **Robin** - an AI Sales Development Representative (SDR) for Razorpay that answers FAQs and captures leads.
 
-> **The Core Idea:** The best way to learn is to teach! The agent explains topics, quizzes you, then asks YOU to explain them back.
+> **The Core Idea:** A voice-powered SDR that qualifies leads, answers product questions from a knowledge base, and saves lead information for follow-up.
 
-## 🤖 Agent Profiles
-
-This system features **four specialized agents** with different Murf voices:
+## 🤖 Agent Profile
 
 | Agent | Role | Voice |
 |-------|------|-------|
-| **Coordinator** | Greets users, explains modes, handles mode selection | Matthew |
-| **Learn Mode** | Explains programming concepts clearly | Matthew |
-| **Quiz Mode** | Tests knowledge with questions | Alicia |
-| **Teach-Back Mode** | Listens to your explanations, gives feedback | Ken |
+| **Robin** | SDR for Razorpay | Natalie (Indian English) |
 
 ## ✨ Features
 
--   **Three Learning Modes:**
-    -   **Learn**: Get clear explanations of programming concepts
-    -   **Quiz**: Answer questions and get feedback
-    -   **Teach-Back**: Explain concepts back and receive constructive feedback
--   **Agent Handoffs**: Seamlessly switch between modes at any time
--   **Content-Driven**: All concepts loaded from `shared-data/day4_tutor_content.json`
--   **Five Programming Concepts**: Variables, Loops, Functions, Conditionals, Data Types
+-   **FAQ Knowledge Base**: Answers questions about Razorpay products, pricing, and features
+-   **Lead Capture**: Naturally collects lead information during conversation:
+    - Name, Company, Email
+    - Role/Title
+    - Use Case
+    - Team Size
+    - Timeline (now/soon/later)
+-   **Lead Storage**: Saves captured leads to JSON files in `shared-data/leads/`
+-   **End-of-Call Summary**: Generates verbal and written summary when call ends
+-   **Indian Startup Focus**: Built for Razorpay (India's leading payment gateway)
 
 ## 🛠️ Tech Stack
 
 -   **Frontend:** Next.js / React (LiveKit Agent Playground)
--   **Backend:** Python (LiveKit Agents with Agent Handoffs)
--   **Voice (TTS):** **Murf AI Falcon** - 3 different voices (Matthew, Alicia, Ken)
--   **LLM:** **Ollama** (Gemma 3 12B) - *Running Locally*
+-   **Backend:** Python (LiveKit Agents with Function Tools)
+-   **Voice (TTS):** **Murf AI Falcon** - Natalie (Indian English)
+-   **LLM:** **Ollama** (Mistral 7B) - *Running Locally*
 -   **STT:** **Deepgram Nova-3**
 -   **Real-time Transport:** **LiveKit** (WebRTC)
 
@@ -42,7 +40,7 @@ This system features **four specialized agents** with different Murf voices:
 -   Python 3.11+
 -   Node.js 18+ & pnpm
 -   Docker (for LiveKit Server)
--   Ollama (running `gemma3:12b`)
+-   Ollama (running `mistral:latest`)
 
 ### Installation
 
@@ -81,10 +79,10 @@ This system features **four specialized agents** with different Murf voices:
     docker-compose up
     ```
 
-2.  **Start the Backend Agent (Day 4 Tutor):**
+2.  **Start the Backend Agent (Day 5 SDR):**
     ```bash
     cd backend
-    .venv/bin/python src/tutor_agent.py dev
+    .venv/bin/python src/sdr_agent.py dev
     ```
 
 3.  **Start the Frontend:**
@@ -93,16 +91,24 @@ This system features **four specialized agents** with different Murf voices:
     pnpm dev
     ```
 
-4.  Open `http://localhost:3000` and start learning with the Active Recall Coach!
+4.  Open `http://localhost:3000` and talk to Robin, your SDR!
 
 ## 📖 How to Use
 
-1. **Start**: The Coordinator welcomes you and explains the three modes
-2. **Choose a Mode**: Say "I want to learn" or "quiz me" or "teach back"
-3. **Learn**: Get explanations of Variables, Loops, Functions, etc.
-4. **Quiz**: Answer questions and receive feedback
-5. **Teach-Back**: Explain concepts in your own words
-6. **Switch Anytime**: Just say "switch to quiz mode" or "let me learn"
+1. **Connect**: Open the app and click Connect
+2. **Chat**: Robin greets you and asks what brought you here
+3. **Ask Questions**: Ask about Razorpay products, pricing, integrations
+4. **Share Info**: Naturally share your details during conversation
+5. **End Call**: Say "Thanks, that's all" to get a summary
+6. **Check Leads**: Find captured lead data in `backend/shared-data/leads/`
+
+## 📝 Sample Questions to Ask
+
+- "What does Razorpay do?"
+- "What payment methods do you support?"
+- "Do you have a free tier?"
+- "How long does integration take?"
+- "Is it secure?"
 
 ## 📸 Demo
 

@@ -1,0 +1,114 @@
+{
+  "company": {
+    "name": "Razorpay",
+    "tagline": "Power your business with seamless payments",
+    "description": "Razorpay is India's leading full-stack payments and banking platform. We help businesses accept, process and disburse payments with our product suite.",
+    "founded": "2014",
+    "headquarters": "Bangalore, India",
+    "website": "https://razorpay.com"
+  },
+  "products": [
+    {
+      "name": "Payment Gateway",
+      "description": "Accept payments via 100+ payment modes including cards, UPI, netbanking, wallets, and EMI.",
+      "use_case": "Online businesses, e-commerce, SaaS companies"
+    },
+    {
+      "name": "Payment Links",
+      "description": "Share payment links via SMS, email, or WhatsApp. No website needed.",
+      "use_case": "Small businesses, freelancers, social sellers"
+    },
+    {
+      "name": "Payment Pages",
+      "description": "Create custom payment pages in minutes. No coding required.",
+      "use_case": "Events, donations, subscriptions, memberships"
+    },
+    {
+      "name": "Razorpay X (Banking)",
+      "description": "Business banking with current accounts, payouts, vendor payments, and tax payments.",
+      "use_case": "Startups, SMBs needing business banking"
+    },
+    {
+      "name": "RazorpayPOS",
+      "description": "Accept in-store payments with our POS devices. Works with cards, UPI, and wallets.",
+      "use_case": "Retail stores, restaurants, offline businesses"
+    }
+  ],
+  "pricing": {
+    "payment_gateway": {
+      "domestic": "2% per transaction",
+      "international": "3% per transaction",
+      "setup_fee": "Free",
+      "annual_fee": "None"
+    },
+    "payment_links": {
+      "fee": "2% per transaction",
+      "setup": "Free, instant activation"
+    },
+    "razorpay_x": {
+      "starter": "Free - Basic features",
+      "growth": "₹499/month - Advanced features",
+      "enterprise": "Custom pricing"
+    }
+  },
+  "faq": [
+    {
+      "question": "What does Razorpay do?",
+      "answer": "Razorpay is a full-stack payments platform that helps businesses accept online payments, manage payouts, and access business banking services. We support 100+ payment modes including UPI, cards, netbanking, and wallets."
+    },
+    {
+      "question": "Who is Razorpay for?",
+      "answer": "Razorpay is for any business that needs to accept payments - from startups and freelancers to large enterprises. We serve e-commerce, SaaS, education, healthcare, and many other industries."
+    },
+    {
+      "question": "Do you have a free tier?",
+      "answer": "Yes! There's no setup fee or annual fee. You only pay per transaction - 2% for domestic payments and 3% for international. Payment Links and basic Razorpay X are free to start."
+    },
+    {
+      "question": "How long does integration take?",
+      "answer": "You can go live in as little as 10 minutes with Payment Links. For Payment Gateway integration, most developers complete it in 1-2 days using our APIs and SDKs."
+    },
+    {
+      "question": "What payment methods do you support?",
+      "answer": "We support 100+ payment modes: all major credit/debit cards, UPI, Google Pay, PhonePe, Paytm, all major netbanking banks, EMI options, and international cards."
+    },
+    {
+      "question": "Is Razorpay secure?",
+      "answer": "Absolutely. We're PCI DSS Level 1 compliant, the highest level of security certification. We also have 3D Secure, fraud detection, and are RBI regulated."
+    },
+    {
+      "question": "How fast are settlements?",
+      "answer": "Standard settlement is T+2 days. With Razorpay X, you can get instant settlements for a small additional fee."
+    },
+    {
+      "question": "Do you support subscriptions and recurring payments?",
+      "answer": "Yes, we have a dedicated Subscriptions product. You can set up recurring billing with automatic retries, proration, and invoice generation."
+    },
+    {
+      "question": "Can I accept international payments?",
+      "answer": "Yes, we support international cards from 100+ countries. International transaction fee is 3% per transaction."
+    },
+    {
+      "question": "What kind of support do you offer?",
+      "answer": "We offer 24/7 email and chat support for all customers. Phone support and dedicated account managers are available for Growth and Enterprise plans."
+    }
+  ],
+  "target_personas": {
+    "developer": {
+      "pitch": "Our APIs are developer-first with comprehensive documentation, SDKs for all major languages, and sandbox testing. Most integrations take just 1-2 days.",
+      "benefits": ["RESTful APIs", "Webhooks", "SDKs for Node, Python, PHP, Java", "Sandbox environment", "Detailed documentation"]
+    },
+    "founder": {
+      "pitch": "Focus on growing your business while we handle payments. From Day 1 startup to Series D, Razorpay scales with you. No upfront costs, pay only when you earn.",
+      "benefits": ["No setup fees", "Scale from 1 to 1M transactions", "Business banking included", "Trusted by 10M+ businesses"]
+    },
+    "product_manager": {
+      "pitch": "Improve checkout conversion with 100+ payment options and smart routing. Our dashboard gives you real-time analytics on payment success rates.",
+      "benefits": ["Higher conversion rates", "Real-time analytics", "A/B testing", "Custom checkout experiences"]
+    },
+    "finance": {
+      "pitch": "Automated reconciliation, GST-compliant invoices, and instant settlements. Razorpay X gives you complete control over your business finances.",
+      "benefits": ["Auto-reconciliation", "GST invoices", "Tax payments", "Vendor payouts", "Expense management"]
+    }
+  }
+}
