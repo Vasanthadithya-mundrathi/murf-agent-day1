@@ -1,33 +1,40 @@
-# Murf AI Voice Agent - Day 3: Apollo Health Assistant "Priya" 🏥
+# Murf AI Voice Agent - Day 4: Active Recall Coach 📚
 
-**Welcome to Day 3 of the Murf AI Voice Agents Challenge!**
+**Welcome to Day 4 of the Murf AI Voice Agents Challenge!**
 
-Today, I shifted gears from coffee to care. I transformed the agent into **Priya**, a warm, empathetic, and helpful AI Health Assistant for Apollo Pharmacy/Healthcare.
+Today, I built **Teach-the-Tutor** - an Active Recall Coach that helps you learn programming concepts through three different learning modes with agent handoffs.
 
-> **Disclaimer:** This is an experimental project and is not officially affiliated with Apollo Hospitals. **Priya is an AI, not a doctor.** Always consult a professional for medical advice.
+> **The Core Idea:** The best way to learn is to teach! The agent explains topics, quizzes you, then asks YOU to explain them back.
 
-## 🤖 Agent Profile
+## 🤖 Agent Profiles
 
--   **Name:** Priya
--   **Role:** AI Health Assistant for Apollo Pharmacy
--   **Personality:** Caring, empathetic, professional, and reassuring. Like a friendly nurse or health companion.
--   **Voice:** Murf AI (Natalie - Conversational Style)
+This system features **four specialized agents** with different Murf voices:
+
+| Agent | Role | Voice |
+|-------|------|-------|
+| **Coordinator** | Greets users, explains modes, handles mode selection | Matthew |
+| **Learn Mode** | Explains programming concepts clearly | Matthew |
+| **Quiz Mode** | Tests knowledge with questions | Alicia |
+| **Teach-Back Mode** | Listens to your explanations, gives feedback | Ken |
 
 ## ✨ Features
 
--   **First-Aid Advice:** Provides immediate, non-medical guidance for common issues like fever, cold, cough, headache, and minor cuts.
--   **Location Awareness:** Specifically tuned for **Hyderabad (Kokapet)** area, guiding users to the nearest Apollo Pharmacy (1.2 km away).
--   **Safety First:** Strictly programmed to NEVER diagnose or prescribe. Always recommends visiting a doctor for serious or persistent symptoms.
--   **Immersive UI:** Complete frontend transformation with a soothing **Apollo Blue** animated gradient theme and medical aesthetics.
+-   **Three Learning Modes:**
+    -   **Learn**: Get clear explanations of programming concepts
+    -   **Quiz**: Answer questions and get feedback
+    -   **Teach-Back**: Explain concepts back and receive constructive feedback
+-   **Agent Handoffs**: Seamlessly switch between modes at any time
+-   **Content-Driven**: All concepts loaded from `shared-data/day4_tutor_content.json`
+-   **Five Programming Concepts**: Variables, Loops, Functions, Conditionals, Data Types
 
 ## 🛠️ Tech Stack
 
--   **Frontend:** Next.js / React (LiveKit Agent Playground) - *Custom Apollo Theme*
--   **Backend:** Python (LiveKit Agents)
--   **Voice (TTS):** **Murf AI** (High-fidelity, human-like speech)
--   **LLM:** **Ollama** (Gemma 3 12B) - *Running Locally for privacy and speed*
--   **STT:** **Deepgram Nova-3** (Fast and accurate transcription)
--   **Real-time Transport:** **LiveKit** (WebRTC infrastructure)
+-   **Frontend:** Next.js / React (LiveKit Agent Playground)
+-   **Backend:** Python (LiveKit Agents with Agent Handoffs)
+-   **Voice (TTS):** **Murf AI Falcon** - 3 different voices (Matthew, Alicia, Ken)
+-   **LLM:** **Ollama** (Gemma 3 12B) - *Running Locally*
+-   **STT:** **Deepgram Nova-3**
+-   **Real-time Transport:** **LiveKit** (WebRTC)
 
 ## 🚀 Setup & Run
 
@@ -48,10 +55,7 @@ Today, I shifted gears from coffee to care. I transformed the agent into **Priya
 2.  **Install Backend Dependencies:**
     ```bash
     cd backend
-    # Using uv (recommended)
     uv sync
-    # Or pip
-    pip install -r requirements.txt
     ```
 
 3.  **Install Frontend Dependencies:**
@@ -77,11 +81,10 @@ Today, I shifted gears from coffee to care. I transformed the agent into **Priya
     docker-compose up
     ```
 
-2.  **Start the Backend Agent:**
+2.  **Start the Backend Agent (Day 4 Tutor):**
     ```bash
     cd backend
-    source .venv/bin/activate
-    python src/agent.py dev
+    .venv/bin/python src/tutor_agent.py dev
     ```
 
 3.  **Start the Frontend:**
@@ -90,7 +93,16 @@ Today, I shifted gears from coffee to care. I transformed the agent into **Priya
     pnpm dev
     ```
 
-4.  Open `http://localhost:3000` in your browser and start chatting with Priya!
+4.  Open `http://localhost:3000` and start learning with the Active Recall Coach!
+
+## 📖 How to Use
+
+1. **Start**: The Coordinator welcomes you and explains the three modes
+2. **Choose a Mode**: Say "I want to learn" or "quiz me" or "teach back"
+3. **Learn**: Get explanations of Variables, Loops, Functions, etc.
+4. **Quiz**: Answer questions and receive feedback
+5. **Teach-Back**: Explain concepts in your own words
+6. **Switch Anytime**: Just say "switch to quiz mode" or "let me learn"
 
 ## 📸 Demo
 

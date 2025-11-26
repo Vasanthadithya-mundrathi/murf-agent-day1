@@ -1,0 +1,32 @@
+[
+  {
+    "id": "variables",
+    "title": "Variables",
+    "summary": "Variables are containers that store data values in programming. Think of them as labeled boxes where you can put information and retrieve it later. Variables have a name (identifier) and hold a value that can change during program execution. They are essential for storing user input, calculation results, and any data you need to work with in your code. For example, 'age = 25' creates a variable called 'age' that stores the number 25.",
+    "sample_question": "What is a variable and why is it useful in programming?"
+  },
+  {
+    "id": "loops",
+    "title": "Loops",
+    "summary": "Loops are control structures that allow you to repeat a block of code multiple times without writing it over and over. There are two main types: 'for' loops iterate a specific number of times or through a collection of items, while 'while' loops continue as long as a condition remains true. For example, a for loop can print numbers 1 to 10, and a while loop can keep asking for input until the user enters 'quit'. Loops are powerful for processing lists, automating repetitive tasks, and implementing game logic.",
+    "sample_question": "Explain the difference between a for loop and a while loop, and when you would use each one."
+  },
+  {
+    "id": "functions",
+    "title": "Functions",
+    "summary": "Functions are reusable blocks of code that perform a specific task. They help organize your code, avoid repetition, and make programs easier to understand and maintain. Functions can take inputs (called parameters or arguments) and return outputs (return values). For example, a function called 'calculate_area(width, height)' could take two numbers and return their product. You define a function once and can call it many times throughout your program. Good functions do one thing well and have clear, descriptive names.",
+    "sample_question": "What are functions in programming, and what are the benefits of using them?"
+  },
+  {
+    "id": "conditionals",
+    "title": "Conditionals (If-Else)",
+    "summary": "Conditionals allow your program to make decisions and execute different code based on whether certain conditions are true or false. The most common is the 'if-else' statement: if a condition is true, one block of code runs; otherwise, another block runs. You can also chain multiple conditions using 'elif' (else-if). For example, checking if a user's age is 18 or above to grant access, or determining letter grades based on numeric scores. Conditionals are fundamental to creating interactive, responsive programs that adapt to different situations.",
+    "sample_question": "How do if-else statements work, and can you give an example of when you'd use them?"
+  },
+  {
+    "id": "data_types",
+    "title": "Data Types",
+    "summary": "Data types define what kind of value a variable can hold and what operations can be performed on it. Common data types include: integers (whole numbers like 5, -10), floats (decimal numbers like 3.14), strings (text like 'hello'), booleans (True/False), and lists (collections of items). Understanding data types is crucial because they determine how data is stored in memory and what you can do with it. For example, you can add two integers together but you can't divide a string by a number. Python is dynamically typed, meaning you don't have to explicitly declare types, but knowing them helps prevent errors.",
+    "sample_question": "What are the main data types in programming, and why does it matter which type you use?"
+  }
+]
