@@ -1,0 +1,271 @@
+{
+  "store_info": {
+    "name": "FreshMart Express",
+    "tagline": "Fresh groceries delivered in 30 minutes!",
+    "currency": "INR",
+    "delivery_fee": 29
+  },
+  "categories": ["Dairy & Eggs", "Bread & Bakery", "Fruits", "Vegetables", "Snacks", "Beverages", "Pantry", "Ready to Eat"],
+  "products": [
+    {
+      "id": "milk-001",
+      "name": "Amul Full Cream Milk",
+      "category": "Dairy & Eggs",
+      "price": 68,
+      "unit": "1 Litre",
+      "tags": ["vegetarian", "protein"]
+    },
+    {
+      "id": "eggs-001",
+      "name": "Farm Fresh Eggs",
+      "category": "Dairy & Eggs",
+      "price": 85,
+      "unit": "12 pcs",
+      "tags": ["protein", "breakfast"]
+    },
+    {
+      "id": "butter-001",
+      "name": "Amul Butter",
+      "category": "Dairy & Eggs",
+      "price": 56,
+      "unit": "100g",
+      "tags": ["vegetarian"]
+    },
+    {
+      "id": "cheese-001",
+      "name": "Amul Cheese Slices",
+      "category": "Dairy & Eggs",
+      "price": 120,
+      "unit": "200g",
+      "tags": ["vegetarian", "protein"]
+    },
+    {
+      "id": "curd-001",
+      "name": "Fresh Curd",
+      "category": "Dairy & Eggs",
+      "price": 45,
+      "unit": "400g",
+      "tags": ["vegetarian", "probiotic"]
+    },
+    {
+      "id": "bread-001",
+      "name": "Whole Wheat Bread",
+      "category": "Bread & Bakery",
+      "price": 45,
+      "unit": "400g",
+      "tags": ["vegetarian", "fiber"]
+    },
+    {
+      "id": "bread-002",
+      "name": "White Sandwich Bread",
+      "category": "Bread & Bakery",
+      "price": 40,
+      "unit": "400g",
+      "tags": ["vegetarian"]
+    },
+    {
+      "id": "pav-001",
+      "name": "Pav Buns",
+      "category": "Bread & Bakery",
+      "price": 30,
+      "unit": "6 pcs",
+      "tags": ["vegetarian"]
+    },
+    {
+      "id": "apple-001",
+      "name": "Shimla Apples",
+      "category": "Fruits",
+      "price": 180,
+      "unit": "1 kg",
+      "tags": ["vegan", "fiber", "healthy"]
+    },
+    {
+      "id": "banana-001",
+      "name": "Robusta Bananas",
+      "category": "Fruits",
+      "price": 50,
+      "unit": "6 pcs",
+      "tags": ["vegan", "potassium", "healthy"]
+    },
+    {
+      "id": "orange-001",
+      "name": "Nagpur Oranges",
+      "category": "Fruits",
+      "price": 120,
+      "unit": "1 kg",
+      "tags": ["vegan", "vitamin-c", "healthy"]
+    },
+    {
+      "id": "onion-001",
+      "name": "Onions",
+      "category": "Vegetables",
+      "price": 40,
+      "unit": "1 kg",
+      "tags": ["vegan"]
+    },
+    {
+      "id": "tomato-001",
+      "name": "Tomatoes",
+      "category": "Vegetables",
+      "price": 35,
+      "unit": "500g",
+      "tags": ["vegan"]
+    },
+    {
+      "id": "potato-001",
+      "name": "Potatoes",
+      "category": "Vegetables",
+      "price": 30,
+      "unit": "1 kg",
+      "tags": ["vegan"]
+    },
+    {
+      "id": "capsicum-001",
+      "name": "Green Capsicum",
+      "category": "Vegetables",
+      "price": 45,
+      "unit": "250g",
+      "tags": ["vegan"]
+    },
+    {
+      "id": "chips-001",
+      "name": "Lay's Classic Salted",
+      "category": "Snacks",
+      "price": 20,
+      "unit": "50g",
+      "tags": ["vegetarian"]
+    },
+    {
+      "id": "chips-002",
+      "name": "Kurkure Masala Munch",
+      "category": "Snacks",
+      "price": 20,
+      "unit": "75g",
+      "tags": ["vegetarian", "spicy"]
+    },
+    {
+      "id": "biscuit-001",
+      "name": "Parle-G Biscuits",
+      "category": "Snacks",
+      "price": 25,
+      "unit": "250g",
+      "tags": ["vegetarian"]
+    },
+    {
+      "id": "namkeen-001",
+      "name": "Haldiram's Aloo Bhujia",
+      "category": "Snacks",
+      "price": 65,
+      "unit": "200g",
+      "tags": ["vegetarian", "spicy"]
+    },
+    {
+      "id": "coke-001",
+      "name": "Coca-Cola",
+      "category": "Beverages",
+      "price": 40,
+      "unit": "750ml",
+      "tags": ["vegetarian"]
+    },
+    {
+      "id": "juice-001",
+      "name": "Real Mango Juice",
+      "category": "Beverages",
+      "price": 99,
+      "unit": "1 Litre",
+      "tags": ["vegetarian", "vitamin"]
+    },
+    {
+      "id": "water-001",
+      "name": "Bisleri Water",
+      "category": "Beverages",
+      "price": 20,
+      "unit": "1 Litre",
+      "tags": ["vegan"]
+    },
+    {
+      "id": "rice-001",
+      "name": "India Gate Basmati Rice",
+      "category": "Pantry",
+      "price": 180,
+      "unit": "1 kg",
+      "tags": ["vegan", "gluten-free"]
+    },
+    {
+      "id": "atta-001",
+      "name": "Aashirvaad Whole Wheat Atta",
+      "category": "Pantry",
+      "price": 280,
+      "unit": "5 kg",
+      "tags": ["vegan", "fiber"]
+    },
+    {
+      "id": "oil-001",
+      "name": "Fortune Sunflower Oil",
+      "category": "Pantry",
+      "price": 160,
+      "unit": "1 Litre",
+      "tags": ["vegan"]
+    },
+    {
+      "id": "pasta-001",
+      "name": "Maggi Penne Pasta",
+      "category": "Pantry",
+      "price": 55,
+      "unit": "400g",
+      "tags": ["vegetarian"]
+    },
+    {
+      "id": "sauce-001",
+      "name": "Del Monte Pasta Sauce",
+      "category": "Pantry",
+      "price": 99,
+      "unit": "400g",
+      "tags": ["vegetarian"]
+    },
+    {
+      "id": "peanut-001",
+      "name": "Sundrop Peanut Butter",
+      "category": "Pantry",
+      "price": 199,
+      "unit": "462g",
+      "tags": ["vegetarian", "protein"]
+    },
+    {
+      "id": "maggi-001",
+      "name": "Maggi 2-Minute Noodles",
+      "category": "Ready to Eat",
+      "price": 14,
+      "unit": "70g",
+      "tags": ["vegetarian", "quick"]
+    },
+    {
+      "id": "poha-001",
+      "name": "MTR Poha Mix",
+      "category": "Ready to Eat",
+      "price": 45,
+      "unit": "180g",
+      "tags": ["vegetarian", "breakfast"]
+    },
+    {
+      "id": "upma-001",
+      "name": "MTR Upma Mix",
+      "category": "Ready to Eat",
+      "price": 45,
+      "unit": "180g",
+      "tags": ["vegetarian", "breakfast"]
+    }
+  ],
+  "recipes": {
+    "peanut butter sandwich": ["bread-001", "peanut-001"],
+    "cheese sandwich": ["bread-001", "butter-001", "cheese-001"],
+    "pasta": ["pasta-001", "sauce-001"],
+    "omelette": ["eggs-001", "onion-001", "tomato-001", "capsicum-001"],
+    "aloo paratha": ["atta-001", "potato-001", "onion-001", "butter-001"],
+    "poha": ["poha-001", "onion-001", "potato-001"],
+    "fruit salad": ["apple-001", "banana-001", "orange-001"],
+    "breakfast basics": ["bread-001", "eggs-001", "milk-001", "butter-001"],
+    "maggi": ["maggi-001", "onion-001", "tomato-001"],
+    "chai": ["milk-001", "biscuit-001"]
+  }
+}

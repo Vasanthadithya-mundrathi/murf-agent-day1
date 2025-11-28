@@ -1,27 +1,26 @@
-# Murf AI Voice Agent - Day 6: Fraud Alert Agent LEO 🔒
+# Murf AI Voice Agent - Day 7: Grocery Agent ROBERT 🛒
 
-**Welcome to Day 6 of the Murf AI Voice Agents Challenge!**
+**Welcome to Day 7 of the Murf AI Voice Agents Challenge!**
 
-Today, I built **LEO** - an AI Fraud Detection Agent for SecureBank India that verifies suspicious transactions with customers.
+Today, I built **ROBERT** - an AI Grocery Shopping Assistant for FreshMart Express that helps customers order groceries via voice!
 
-> **The Core Idea:** A voice-powered fraud detection system that calls customers about suspicious transactions, verifies their identity, and takes immediate action to protect their accounts.
+> **The Core Idea:** A voice-powered quick commerce assistant that takes grocery orders, understands recipe requests, manages a shopping cart, and places orders - all through natural conversation.
 
 ## 🤖 Agent Profile
 
 | Agent | Role | Voice |
 |-------|------|-------|
-| **LEO** | Fraud Detection Agent | Arjun (Indian English) |
+| **ROBERT** | Grocery Shopping Assistant | Aarav (Indian English) |
 
 ## ✨ Features
 
--   **Fraud Case Database**: JSON-based database with 5 sample fraud cases
--   **Identity Verification**: Secure verification using security questions (no sensitive data)
--   **Transaction Details**: Reads out suspicious transaction info (amount, merchant, location, time)
--   **Three Outcomes**:
-    - ✅ `confirmed_safe` - Customer confirms they made the transaction
-    - 🚨 `confirmed_fraud` - Customer denies, card blocked, dispute raised
-    - ❌ `verification_failed` - Cannot verify identity, manual review required
--   **Database Updates**: Persists case status and outcome notes back to JSON
+-   **Product Catalog**: JSON-based catalog with 30+ grocery items across 8 categories
+-   **Smart Cart Management**: Add, remove, update quantities with voice commands
+-   **Recipe Intelligence**: Say "I need ingredients for pasta" and it adds all required items
+-   **10 Pre-built Recipes**: Peanut butter sandwich, cheese sandwich, pasta, omelette, aloo paratha, poha, fruit salad, breakfast basics, maggi, chai
+-   **Order Placement**: Collects name and address, places order with unique ID
+-   **Order History**: Check status of previous orders
+-   **Delivery Fee Calculation**: Automatic subtotal + delivery fee calculation
 
 ## 🛠️ Tech Stack
 
@@ -77,10 +76,10 @@ Today, I built **LEO** - an AI Fraud Detection Agent for SecureBank India that v
     docker-compose up
     ```
 
-2.  **Start the Backend Agent (Day 6 Fraud Agent):**
+2.  **Start the Backend Agent (Day 7 Grocery Agent):**
     ```bash
     cd backend
-    .venv/bin/python src/fraud_agent.py dev
+    .venv/bin/python src/grocery_agent.py dev
     ```
 
 3.  **Start the Frontend:**
@@ -89,27 +88,30 @@ Today, I built **LEO** - an AI Fraud Detection Agent for SecureBank India that v
     pnpm dev
     ```
 
-4.  Open `http://localhost:3000` and talk to LEO, your Fraud Detection Agent!
+4.  Open `http://localhost:3000` and talk to ROBERT, your Grocery Shopping Assistant!
 
 ## 📖 How to Use
 
 1. **Connect**: Open the app and click Connect
-2. **LEO Greets**: LEO introduces himself as SecureBank's fraud detection agent
-3. **Provide Username**: Give a test username (rahul, priya, amit, neha, or vikram)
-4. **Answer Security Question**: LEO asks your security question for verification
-5. **Review Transaction**: LEO reads the suspicious transaction details
-6. **Confirm or Deny**: Say "yes" if you made it, "no" if it's fraud
-7. **Case Updated**: Check `backend/shared-data/fraud_cases.json` for updated status
+2. **ROBERT Greets**: ROBERT introduces himself and asks what you'd like to order
+3. **Browse or Request**: Ask for specific items or say "I need ingredients for pasta"
+4. **Manage Cart**: Add, remove, or update quantities with voice commands
+5. **View Cart**: Ask "What's in my cart?" to see items and total
+6. **Place Order**: Say "Place my order" and provide your name and address
+7. **Order Saved**: Check `backend/shared-data/orders.json` for your order
 
-## 📝 Test Usernames
+## 🛒 Sample Products
 
-| Username | Card | Amount | Merchant |
-|----------|------|--------|----------|
-| rahul | *4521 | ₹45,999 | TechGadgets Pro |
-| priya | *8834 | ₹12,500 | LuxuryWatches Ltd |
-| amit | *2267 | ₹78,450 | CryptoExchange Global |
-| neha | *6109 | ₹3,299 | StreamFlix Premium |
-| vikram | *3345 | ₹1,25,000 | ElectroMart International |
+| Category | Items |
+|----------|-------|
+| Dairy & Eggs | Milk, Eggs, Butter, Cheese, Curd |
+| Bread & Bakery | Whole Wheat Bread, White Bread, Pav Buns |
+| Fruits | Apples, Bananas, Oranges |
+| Vegetables | Onions, Tomatoes, Potatoes, Capsicum |
+| Snacks | Lay's, Kurkure, Parle-G, Aloo Bhujia |
+| Beverages | Coca-Cola, Mango Juice, Bisleri Water |
+| Pantry | Rice, Atta, Oil, Pasta, Peanut Butter |
+| Ready to Eat | Maggi, Poha Mix, Upma Mix |
 
 ## 📸 Demo
 
@@ -117,3 +119,4 @@ Today, I built **LEO** - an AI Fraud Detection Agent for SecureBank India that v
 
 ---
 *Built with ❤️ by Vasanth for the Murf AI Challenge.*
+
