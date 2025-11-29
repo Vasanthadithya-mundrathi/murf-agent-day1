@@ -1,26 +1,28 @@
-# Murf AI Voice Agent - Day 7: Grocery Agent ROBERT 🛒
+# Murf AI Voice Agent - Day 8: Game Master Agent 🎲⚔️
 
-**Welcome to Day 7 of the Murf AI Voice Agents Challenge!**
+**Welcome to Day 8 of the Murf AI Voice Agents Challenge!**
 
-Today, I built **ROBERT** - an AI Grocery Shopping Assistant for FreshMart Express that helps customers order groceries via voice!
+Today, I built a **Voice Game Master** - A D&D-style adventure narrator set in The Witcher universe!
 
-> **The Core Idea:** A voice-powered quick commerce assistant that takes grocery orders, understands recipe requests, manages a shopping cart, and places orders - all through natural conversation.
+> **The Core Idea:** A voice-powered Game Master that runs an interactive adventure, tracks player stats, performs dice rolls, and guides you through a dark fantasy story - all through voice conversation.
 
 ## 🤖 Agent Profile
 
 | Agent | Role | Voice |
 |-------|------|-------|
-| **ROBERT** | Grocery Shopping Assistant | Aarav (Indian English) |
+| **Game Master** | D&D-Style Narrator | Hazel (British English) |
 
 ## ✨ Features
 
--   **Product Catalog**: JSON-based catalog with 30+ grocery items across 8 categories
--   **Smart Cart Management**: Add, remove, update quantities with voice commands
--   **Recipe Intelligence**: Say "I need ingredients for pasta" and it adds all required items
--   **10 Pre-built Recipes**: Peanut butter sandwich, cheese sandwich, pasta, omelette, aloo paratha, poha, fruit salad, breakfast basics, maggi, chai
--   **Order Placement**: Collects name and address, places order with unique ID
--   **Order History**: Check status of previous orders
--   **Delivery Fee Calculation**: Automatic subtotal + delivery fee calculation
+-   **The Witcher Universe**: Dark fantasy setting with monster hunting, moral choices, and magic
+-   **Dice Roll Mechanics**: D20 skill checks for risky actions (strength, agility, signs/magic)
+-   **Player Character Sheet**: Track health, stats, inventory, and gold
+-   **Dynamic Story Arc**: Beginning → Rising → Climax → Resolution pacing
+-   **NPC Tracking**: Remember characters you've met and their attitudes
+-   **Quest System**: Active quests, completion tracking, and gold rewards
+-   **Location System**: Track your journey through the world
+-   **Event History**: The GM remembers all your past decisions
+
 
 ## 🛠️ Tech Stack
 
@@ -76,10 +78,10 @@ Today, I built **ROBERT** - an AI Grocery Shopping Assistant for FreshMart Expre
     docker-compose up
     ```
 
-2.  **Start the Backend Agent (Day 7 Grocery Agent):**
+2.  **Start the Backend Agent (Day 8 Game Master):**
     ```bash
     cd backend
-    .venv/bin/python src/grocery_agent.py dev
+    .venv/bin/python src/game_master_agent.py dev
     ```
 
 3.  **Start the Frontend:**
@@ -88,30 +90,35 @@ Today, I built **ROBERT** - an AI Grocery Shopping Assistant for FreshMart Expre
     pnpm dev
     ```
 
-4.  Open `http://localhost:3000` and talk to ROBERT, your Grocery Shopping Assistant!
+4.  Open `http://localhost:3000` and begin your Witcher adventure!
 
-## 📖 How to Use
+## 📖 How to Play
 
 1. **Connect**: Open the app and click Connect
-2. **ROBERT Greets**: ROBERT introduces himself and asks what you'd like to order
-3. **Browse or Request**: Ask for specific items or say "I need ingredients for pasta"
-4. **Manage Cart**: Add, remove, or update quantities with voice commands
-5. **View Cart**: Ask "What's in my cart?" to see items and total
-6. **Place Order**: Say "Place my order" and provide your name and address
-7. **Order Saved**: Check `backend/shared-data/orders.json` for your order
+2. **GM Sets the Scene**: The Game Master describes the stormy Crossroads Inn
+3. **Explore**: Say what you want to do ("I approach the innkeeper", "I look around")
+4. **Take Quests**: NPCs will offer you monster contracts
+5. **Investigate**: Gather clues about the mysterious disappearances
+6. **Combat**: When you fight, the GM rolls dice for your actions
+7. **Make Choices**: Your decisions shape the story's outcome
 
-## 🛒 Sample Products
+## 🎮 Game Mechanics
 
-| Category | Items |
-|----------|-------|
-| Dairy & Eggs | Milk, Eggs, Butter, Cheese, Curd |
-| Bread & Bakery | Whole Wheat Bread, White Bread, Pav Buns |
-| Fruits | Apples, Bananas, Oranges |
-| Vegetables | Onions, Tomatoes, Potatoes, Capsicum |
-| Snacks | Lay's, Kurkure, Parle-G, Aloo Bhujia |
-| Beverages | Coca-Cola, Mango Juice, Bisleri Water |
-| Pantry | Rice, Atta, Oil, Pasta, Peanut Butter |
-| Ready to Eat | Maggi, Poha Mix, Upma Mix |
+| Mechanic | Description |
+|----------|-------------|
+| **Skill Checks** | D20 + modifier vs difficulty class |
+| **Health** | 100 HP max, status changes at thresholds |
+| **Stats** | Strength, Agility, Signs (magic) |
+| **Inventory** | Steel Sword, Silver Sword, Swallow Potions |
+| **Story Arc** | 4 phases over ~12 turns |
+
+## 🗡️ Starting Equipment
+
+- Steel Sword (for humans)
+- Silver Sword (for monsters)
+- 2 Swallow Potions (healing)
+- Witcher Medallion
+- 50 Gold Crowns
 
 ## 📸 Demo
 
