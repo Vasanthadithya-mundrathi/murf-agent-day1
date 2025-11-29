@@ -1,27 +1,27 @@
-# Murf AI Voice Agent - Day 8: Game Master Agent 🎲⚔️
+# Murf AI Voice Agent - Day 9: E-commerce Agent 🛍️
 
-**Welcome to Day 8 of the Murf AI Voice Agents Challenge!**
+**Welcome to Day 9 of the Murf AI Voice Agents Challenge!**
 
-Today, I built a **Voice Game Master** - A D&D-style adventure narrator set in The Witcher universe!
+Today, I built an **ACP-Inspired E-commerce Voice Agent** for TechStyle Store - a developer merchandise shop!
 
-> **The Core Idea:** A voice-powered Game Master that runs an interactive adventure, tracks player stats, performs dice rolls, and guides you through a dark fantasy story - all through voice conversation.
+> **The Core Idea:** A voice-powered shopping assistant following Agentic Commerce Protocol patterns - browse products, manage cart, and place orders through natural conversation.
 
 ## 🤖 Agent Profile
 
 | Agent | Role | Voice |
 |-------|------|-------|
-| **Game Master** | D&D-Style Narrator | Hazel (British English) |
+| **Shop Assistant** | E-commerce Agent | Natalie (American English) |
 
 ## ✨ Features
 
--   **The Witcher Universe**: Dark fantasy setting with monster hunting, moral choices, and magic
--   **Dice Roll Mechanics**: D20 skill checks for risky actions (strength, agility, signs/magic)
--   **Player Character Sheet**: Track health, stats, inventory, and gold
--   **Dynamic Story Arc**: Beginning → Rising → Climax → Resolution pacing
--   **NPC Tracking**: Remember characters you've met and their attitudes
--   **Quest System**: Active quests, completion tracking, and gold rewards
--   **Location System**: Track your journey through the world
--   **Event History**: The GM remembers all your past decisions
+-   **15 Developer Products**: Mugs, t-shirts, hoodies, stickers, caps, and accessories
+-   **Smart Filtering**: Browse by category, price range, or color
+-   **Cart Management**: Add, remove, update quantities with voice
+-   **Size Selection**: Automatic prompts for clothing sizes (S, M, L, XL)
+-   **ACP-Style Orders**: Structured order objects with line items, buyer info, and status
+-   **Order History**: View past orders and total spending
+-   **Reference Tracking**: "Add the first one" works after browsing
+
 
 
 ## 🛠️ Tech Stack
@@ -78,10 +78,10 @@ Today, I built a **Voice Game Master** - A D&D-style adventure narrator set in T
     docker-compose up
     ```
 
-2.  **Start the Backend Agent (Day 8 Game Master):**
+2.  **Start the Backend Agent (Day 9 E-commerce Agent):**
     ```bash
     cd backend
-    .venv/bin/python src/game_master_agent.py dev
+    .venv/bin/python src/ecommerce_agent.py dev
     ```
 
 3.  **Start the Frontend:**
@@ -90,35 +90,42 @@ Today, I built a **Voice Game Master** - A D&D-style adventure narrator set in T
     pnpm dev
     ```
 
-4.  Open `http://localhost:3000` and begin your Witcher adventure!
+4.  Open `http://localhost:3000` and start shopping!
 
-## 📖 How to Play
+## 📖 How to Shop
 
 1. **Connect**: Open the app and click Connect
-2. **GM Sets the Scene**: The Game Master describes the stormy Crossroads Inn
-3. **Explore**: Say what you want to do ("I approach the innkeeper", "I look around")
-4. **Take Quests**: NPCs will offer you monster contracts
-5. **Investigate**: Gather clues about the mysterious disappearances
-6. **Combat**: When you fight, the GM rolls dice for your actions
-7. **Make Choices**: Your decisions shape the story's outcome
+2. **Browse**: "Show me hoodies" or "What mugs do you have under 500?"
+3. **Details**: "Tell me more about the Code Ninja Hoodie"
+4. **Add to Cart**: "Add that hoodie in size L" or "I'll take the first one"
+5. **Review**: "What's in my cart?"
+6. **Checkout**: "Place my order, my name is Rahul"
+7. **Confirm**: Order saved to `backend/shared-data/ecommerce_orders.json`
 
-## 🎮 Game Mechanics
+## 🛒 Product Categories
 
-| Mechanic | Description |
-|----------|-------------|
-| **Skill Checks** | D20 + modifier vs difficulty class |
-| **Health** | 100 HP max, status changes at thresholds |
-| **Stats** | Strength, Agility, Signs (magic) |
-| **Inventory** | Steel Sword, Silver Sword, Swallow Potions |
-| **Story Arc** | 4 phases over ~12 turns |
+| Category | Products | Price Range |
+|----------|----------|-------------|
+| Mugs | Developer, Python, Debug | ₹399 - ₹699 |
+| T-Shirts | Git, React, AI/ML | ₹799 - ₹999 |
+| Hoodies | Code Ninja, Open Source, Dark Mode | ₹1,999 - ₹2,499 |
+| Stickers | Developer Pack, Framework Pack | ₹199 - ₹299 |
+| Caps | Binary Code, AWS | ₹599 - ₹699 |
+| Accessories | RGB Mousepad, Minimal Mousepad | ₹499 - ₹1,299 |
 
-## 🗡️ Starting Equipment
+## 📦 ACP-Style Order Structure
 
-- Steel Sword (for humans)
-- Silver Sword (for monsters)
-- 2 Swallow Potions (healing)
-- Witcher Medallion
-- 50 Gold Crowns
+```json
+{
+  "id": "ORD-ABC12345",
+  "status": "CONFIRMED",
+  "buyer": { "name": "...", "email": "..." },
+  "line_items": [
+    { "product_id": "...", "quantity": 1, "unit_amount": 999, "size": "L" }
+  ],
+  "total": { "amount": 999, "currency": "INR" }
+}
+```
 
 ## 📸 Demo
 

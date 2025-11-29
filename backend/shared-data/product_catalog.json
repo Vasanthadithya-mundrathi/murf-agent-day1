@@ -1,0 +1,163 @@
+{
+  "store_info": {
+    "name": "TechStyle Store",
+    "tagline": "Premium tech accessories and lifestyle products",
+    "currency": "INR"
+  },
+  "products": [
+    {
+      "id": "mug-001",
+      "name": "Developer Coffee Mug",
+      "description": "Ceramic mug with 'I turn coffee into code' print",
+      "price": 499,
+      "currency": "INR",
+      "category": "mugs",
+      "color": "black",
+      "in_stock": true
+    },
+    {
+      "id": "mug-002",
+      "name": "Python Logo Mug",
+      "description": "White ceramic mug with Python snake logo",
+      "price": 399,
+      "currency": "INR",
+      "category": "mugs",
+      "color": "white",
+      "in_stock": true
+    },
+    {
+      "id": "mug-003",
+      "name": "Debug Mode Mug",
+      "description": "Color-changing mug that reveals bugs when hot",
+      "price": 699,
+      "currency": "INR",
+      "category": "mugs",
+      "color": "blue",
+      "in_stock": true
+    },
+    {
+      "id": "tshirt-001",
+      "name": "Git Commit Tee",
+      "description": "Cotton t-shirt with 'git commit -m fixing bugs' print",
+      "price": 799,
+      "currency": "INR",
+      "category": "tshirts",
+      "color": "black",
+      "sizes": ["S", "M", "L", "XL"],
+      "in_stock": true
+    },
+    {
+      "id": "tshirt-002",
+      "name": "React Developer Tee",
+      "description": "Premium cotton tee with React logo",
+      "price": 899,
+      "currency": "INR",
+      "category": "tshirts",
+      "color": "navy",
+      "sizes": ["S", "M", "L", "XL"],
+      "in_stock": true
+    },
+    {
+      "id": "tshirt-003",
+      "name": "AI/ML Engineer Tee",
+      "description": "Cotton tee with neural network design",
+      "price": 999,
+      "currency": "INR",
+      "category": "tshirts",
+      "color": "white",
+      "sizes": ["S", "M", "L", "XL"],
+      "in_stock": true
+    },
+    {
+      "id": "hoodie-001",
+      "name": "Code Ninja Hoodie",
+      "description": "Premium fleece hoodie with ninja coder design",
+      "price": 1999,
+      "currency": "INR",
+      "category": "hoodies",
+      "color": "black",
+      "sizes": ["S", "M", "L", "XL"],
+      "in_stock": true
+    },
+    {
+      "id": "hoodie-002",
+      "name": "Open Source Hoodie",
+      "description": "Comfortable hoodie with GitHub Octocat",
+      "price": 2299,
+      "currency": "INR",
+      "category": "hoodies",
+      "color": "gray",
+      "sizes": ["S", "M", "L", "XL"],
+      "in_stock": true
+    },
+    {
+      "id": "hoodie-003",
+      "name": "Dark Mode Hoodie",
+      "description": "All-black hoodie for dark mode enthusiasts",
+      "price": 2499,
+      "currency": "INR",
+      "category": "hoodies",
+      "color": "black",
+      "sizes": ["S", "M", "L", "XL"],
+      "in_stock": true
+    },
+    {
+      "id": "sticker-001",
+      "name": "Developer Sticker Pack",
+      "description": "50 premium vinyl stickers for laptops",
+      "price": 299,
+      "currency": "INR",
+      "category": "stickers",
+      "in_stock": true
+    },
+    {
+      "id": "sticker-002",
+      "name": "Framework Sticker Pack",
+      "description": "React, Vue, Angular, Node stickers",
+      "price": 199,
+      "currency": "INR",
+      "category": "stickers",
+      "in_stock": true
+    },
+    {
+      "id": "cap-001",
+      "name": "Binary Code Cap",
+      "description": "Baseball cap with 01100011 01101111 01100100 01100101 print",
+      "price": 599,
+      "currency": "INR",
+      "category": "caps",
+      "color": "black",
+      "in_stock": true
+    },
+    {
+      "id": "cap-002",
+      "name": "AWS Certified Cap",
+      "description": "Premium cap with cloud design",
+      "price": 699,
+      "currency": "INR",
+      "category": "caps",
+      "color": "orange",
+      "in_stock": true
+    },
+    {
+      "id": "mousepad-001",
+      "name": "RGB Gaming Mousepad",
+      "description": "Large desk mousepad with LED edges",
+      "price": 1299,
+      "currency": "INR",
+      "category": "accessories",
+      "color": "black",
+      "in_stock": true
+    },
+    {
+      "id": "mousepad-002",
+      "name": "Minimal Code Mousepad",
+      "description": "Clean design mousepad with keyboard shortcuts",
+      "price": 499,
+      "currency": "INR",
+      "category": "accessories",
+      "color": "gray",
+      "in_stock": true
+    }
+  ]
+}
