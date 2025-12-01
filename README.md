@@ -1,26 +1,26 @@
-# Murf AI Voice Agent - Day 9: E-commerce Agent 🛍️
+# Murf AI Voice Agent - Day 10: Improv Battle 🎭
 
-**Welcome to Day 9 of the Murf AI Voice Agents Challenge!**
+**Welcome to Day 10 - THE FINALE of the Murf AI Voice Agents Challenge!**
 
-Today, I built an **ACP-Inspired E-commerce Voice Agent** for TechStyle Store - a developer merchandise shop!
+Today, I built **IMPROV BATTLE** - A voice-first improv game show with MAX as your AI host!
 
-> **The Core Idea:** A voice-powered shopping assistant following Agentic Commerce Protocol patterns - browse products, manage cart, and place orders through natural conversation.
+> **The Core Idea:** A voice-powered game show where an AI host gives you absurd scenarios to improvise, reacts with genuine (sometimes critical!) feedback, and crowns you an improv style at the end.
 
 ## 🤖 Agent Profile
 
 | Agent | Role | Voice |
 |-------|------|-------|
-| **Shop Assistant** | E-commerce Agent | Natalie (American English) |
+| **MAX** | Improv Game Show Host | Terrell (American English) |
 
 ## ✨ Features
 
--   **15 Developer Products**: Mugs, t-shirts, hoodies, stickers, caps, and accessories
--   **Smart Filtering**: Browse by category, price range, or color
--   **Cart Management**: Add, remove, update quantities with voice
--   **Size Selection**: Automatic prompts for clothing sizes (S, M, L, XL)
--   **ACP-Style Orders**: Structured order objects with line items, buyer info, and status
--   **Order History**: View past orders and total spending
--   **Reference Tracking**: "Add the first one" works after browsing
+-   **12 Unique Scenarios**: From time-travelling tour guides to sentient GPS systems
+-   **4 Rounds Per Game**: Progressive challenges with varied difficulty
+-   **Honest Feedback**: Not always positive! 40% stellar, 35% mixed, 25% constructive criticism
+-   **Game State Tracking**: Rounds, performances, and reactions all tracked
+-   **Player Style Analysis**: Get your improv personality at the end
+-   **Graceful Exit**: Say "end game" anytime to stop
+
 
 
 
@@ -78,10 +78,10 @@ Today, I built an **ACP-Inspired E-commerce Voice Agent** for TechStyle Store - 
     docker-compose up
     ```
 
-2.  **Start the Backend Agent (Day 9 E-commerce Agent):**
+2.  **Start the Backend Agent (Day 10 Improv Battle):**
     ```bash
     cd backend
-    .venv/bin/python src/ecommerce_agent.py dev
+    .venv/bin/python src/improv_agent.py dev
     ```
 
 3.  **Start the Frontend:**
@@ -90,46 +90,63 @@ Today, I built an **ACP-Inspired E-commerce Voice Agent** for TechStyle Store - 
     pnpm dev
     ```
 
-4.  Open `http://localhost:3000` and start shopping!
+4.  Open `http://localhost:3000` and let the improv begin!
 
-## 📖 How to Shop
+## 📖 How to Play
 
 1. **Connect**: Open the app and click Connect
-2. **Browse**: "Show me hoodies" or "What mugs do you have under 500?"
-3. **Details**: "Tell me more about the Code Ninja Hoodie"
-4. **Add to Cart**: "Add that hoodie in size L" or "I'll take the first one"
-5. **Review**: "What's in my cart?"
-6. **Checkout**: "Place my order, my name is Rahul"
-7. **Confirm**: Order saved to `backend/shared-data/ecommerce_orders.json`
+2. **Meet MAX**: The host welcomes you and asks your name
+3. **Round Start**: MAX presents an absurd scenario
+4. **Improvise**: Act out the scene with your voice!
+5. **Get Feedback**: MAX reacts - honestly! Sometimes praise, sometimes critique
+6. **Next Round**: 4 rounds of increasing absurdity
+7. **Finale**: Get your improv style and closing summary
 
-## 🛒 Product Categories
+## 🎭 Sample Scenarios
 
-| Category | Products | Price Range |
-|----------|----------|-------------|
-| Mugs | Developer, Python, Debug | ₹399 - ₹699 |
-| T-Shirts | Git, React, AI/ML | ₹799 - ₹999 |
-| Hoodies | Code Ninja, Open Source, Dark Mode | ₹1,999 - ₹2,499 |
-| Stickers | Developer Pack, Framework Pack | ₹199 - ₹299 |
-| Caps | Binary Code, AWS | ₹599 - ₹699 |
-| Accessories | RGB Mousepad, Minimal Mousepad | ₹499 - ₹1,299 |
+| Scenario | Difficulty |
+|----------|------------|
+| Time-Travelling Tour Guide | Medium |
+| The Escaped Dinner | Medium |
+| The Cursed Return | Hard |
+| Motivational GPS | Medium |
+| The Honest Job Interview | Medium |
+| The Pet Translator | Hard |
+| Elevator Pitch... Literally | Easy |
+| Overly Dramatic Barista | Easy |
+| Alien Ambassador | Hard |
+| Weather Wizard | Medium |
 
-## 📦 ACP-Style Order Structure
+## 🎯 Player Styles
 
-```json
-{
-  "id": "ORD-ABC12345",
-  "status": "CONFIRMED",
-  "buyer": { "name": "...", "email": "..." },
-  "line_items": [
-    { "product_id": "...", "quantity": 1, "unit_amount": 999, "size": "L" }
-  ],
-  "total": { "amount": 999, "currency": "INR" }
-}
-```
+At the end, MAX might call you:
+- **The Character Actor** - You inhabit your roles
+- **The Absurdist** - You embrace the weird
+- **The Storyteller** - Natural narrative sense
+- **The Quick Wit** - Snappy responses
+- **The Yes-And Master** - You build beautifully
 
 ## 📸 Demo
 
 *(Add your demo video or screenshot here)*
+
+---
+
+## 🎉 Challenge Complete!
+
+**10 Days, 10 Voice Agents:**
+1. Basic Agent
+2. Coffee Barista
+3. Health Assistant (Priya)
+4. Active Recall Tutor
+5. SDR Agent (Robin)
+6. Fraud Detection (LEO)
+7. Grocery Shopping (ROBERT)
+8. D&D Game Master
+9. E-commerce (ACP)
+10. Improv Battle (MAX)
+
+Thank you @Murf AI for this incredible journey! 🚀
 
 ---
 *Built with ❤️ by Vasanth for the Murf AI Challenge.*

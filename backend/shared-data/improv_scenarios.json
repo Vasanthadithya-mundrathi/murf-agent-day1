@@ -1,0 +1,123 @@
+{
+  "show_info": {
+    "name": "Improv Battle",
+    "tagline": "Where Quick Wit Meets Wild Scenarios!",
+    "host_name": "MAX",
+    "max_rounds": 4
+  },
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "The Time-Travelling Tour Guide",
+      "setup": "You are a time-travelling tour guide who has accidentally brought a group of tourists from the year 1850 to a modern Apple Store. Explain what an iPhone is to them without using any words invented after 1850.",
+      "difficulty": "medium",
+      "tags": ["character", "absurd", "educational"]
+    },
+    {
+      "id": 2,
+      "title": "The Escaped Dinner",
+      "setup": "You are a waiter at a fancy restaurant who must calmly explain to an important customer that their lobster thermidor has escaped the kitchen and is now leading a rebellion in the freezer. Maintain your professional composure.",
+      "difficulty": "medium",
+      "tags": ["character", "absurd", "status"]
+    },
+    {
+      "id": 3,
+      "title": "The Cursed Return",
+      "setup": "You are a customer trying to return an obviously cursed antique mirror to a very skeptical shop owner. The mirror keeps whispering predictions about the shop owner's lunch. Convince them to take it back.",
+      "difficulty": "hard",
+      "tags": ["negotiation", "supernatural", "comedy"]
+    },
+    {
+      "id": 4,
+      "title": "The Motivational GPS",
+      "setup": "You are a GPS navigation system that has become sentient and is now giving life advice along with driving directions. A stressed commuter is trying to get to a job interview while you dispense unsolicited wisdom about their career choices.",
+      "difficulty": "medium",
+      "tags": ["character", "technology", "motivational"]
+    },
+    {
+      "id": 5,
+      "title": "The Honest Job Interview",
+      "setup": "You are at a job interview, but you've been cursed to only speak in brutally honest statements. The job is for a customer service position. Try to get the job while being unable to lie or exaggerate.",
+      "difficulty": "medium",
+      "tags": ["workplace", "honesty", "comedy"]
+    },
+    {
+      "id": 6,
+      "title": "The Pet Translator",
+      "setup": "You are a professional pet psychic who has just discovered your powers are actually real. You're at a client's house and their cat is revealing some very awkward family secrets. Navigate this delicate situation.",
+      "difficulty": "hard",
+      "tags": ["supernatural", "awkward", "comedy"]
+    },
+    {
+      "id": 7,
+      "title": "The Elevator Pitch... Literally",
+      "setup": "You are stuck in an elevator with someone you believe is a famous movie producer. You have 60 seconds to pitch your movie idea: a romantic comedy about sentient office supplies. The catch: they're actually just an accountant.",
+      "difficulty": "easy",
+      "tags": ["pitch", "mistaken-identity", "comedy"]
+    },
+    {
+      "id": 8,
+      "title": "The Overly Dramatic Barista",
+      "setup": "You are a barista who treats every coffee order like it's a life-or-death decision with universe-altering consequences. A customer just ordered a simple black coffee. React accordingly.",
+      "difficulty": "easy",
+      "tags": ["character", "overacting", "comedy"]
+    },
+    {
+      "id": 9,
+      "title": "The Alien Ambassador",
+      "setup": "You are Earth's first ambassador to an alien species. Unfortunately, their culture considers all our polite gestures deeply offensive. You must explain why humans wave, shake hands, and say 'how are you' without actually meaning it.",
+      "difficulty": "hard",
+      "tags": ["sci-fi", "cultural", "explanatory"]
+    },
+    {
+      "id": 10,
+      "title": "The Yoga Instructor Crisis",
+      "setup": "You are a yoga instructor who just realized mid-class that you've been teaching the poses completely wrong for the past five years. All your students are in a very wrong downward dog. Handle this revelation gracefully.",
+      "difficulty": "medium",
+      "tags": ["workplace", "revelation", "physical-comedy"]
+    },
+    {
+      "id": 11,
+      "title": "The Weather Wizard",
+      "setup": "You are a weather forecaster who actually controls the weather with your predictions. You've just accidentally predicted a month of eternal Mondays. Try to fix this on live television.",
+      "difficulty": "medium",
+      "tags": ["supernatural", "broadcast", "comedy"]
+    },
+    {
+      "id": 12,
+      "title": "The Museum Guard's Secret",
+      "setup": "You are a museum security guard who has been secretly having conversations with a particular painting for years. A visitor just caught you mid-conversation with the Mona Lisa. Explain yourself.",
+      "difficulty": "medium",
+      "tags": ["awkward", "supernatural", "character"]
+    }
+  ],
+  "host_reactions": {
+    "positive": [
+      "That was absolutely brilliant! The way you {specific_moment}... chef's kiss!",
+      "Now THAT'S what I call improv! You really committed to that character!",
+      "I'm genuinely impressed. You took that scenario somewhere I didn't expect!",
+      "The audience would be going wild right now! Great energy!"
+    ],
+    "mixed": [
+      "Okay, okay... I liked where you were going with {specific_moment}, but you lost me a bit in the middle there.",
+      "Some good moments! Though I think you could have pushed it further. Don't be afraid to go big!",
+      "Interesting choice! Not where I would have gone, but hey, that's improv for you.",
+      "You started strong, but I felt like you played it a bit safe toward the end."
+    ],
+    "critical": [
+      "Hmm... that felt a bit rushed. Take your time with the character next round!",
+      "I can see you were thinking too hard there. Remember, in improv, your first instinct is usually right!",
+      "A bit flat, if I'm being honest. But don't worry, the next scenario is your chance to redeem yourself!",
+      "You seemed a bit stuck. Try to embrace the absurdity more!"
+    ]
+  },
+  "player_styles": [
+    "The Character Actor - You really inhabit your roles and bring distinct personalities to life",
+    "The Absurdist - You're not afraid to take things to wonderfully weird places",
+    "The Storyteller - You have a natural sense of narrative and building scenes",
+    "The Quick Wit - Your responses are snappy and you think well on your feet",
+    "The Emotional Range - You bring genuine feeling to even the silliest scenarios",
+    "The Physical Comedian - Your descriptions paint vivid, funny pictures",
+    "The Yes-And Master - You build beautifully on every element in the scene"
+  ]
+}
